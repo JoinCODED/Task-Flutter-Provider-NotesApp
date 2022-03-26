@@ -71,6 +71,6 @@ import 'package:provider/provider.dart';
 31. Now we need to go back to our `home_page`, so use the `pop` method. Check you app to make sure todos are being added.
 32. The last thing to do is to change the `done` status of our todo using the `Checkbox` widget.
 33. First, we need to create a method for that in our `todo_provider.dart`, this method takes an `id` as an argument, and looks for the `todo` with the same `id` within our `todos` list, and switch it's `done` property value to `true` or `false`.
-> Hint: use `firstWhere` method to look for the `todo` with the same `id`.
-35. Don't forget to call `notifyListeners()`.
-36. Then, we will wrap our `Checkbox` widget with a `Consumer` widget, and within our `onChange` property, we'll call our provider and the method we just created and pass the `id` to it.
+> Hint: use `firstWhere` or `indexWhere` methods to look for the `todo` with the same `id`.
+34. Don't forget to call `notifyListeners()`.
+35. Then, we will wrap our `Checkbox` widget with a `Consumer` widget, and within our `onChange` property, we'll call our provider and the method we just created and pass the `id` to it.
