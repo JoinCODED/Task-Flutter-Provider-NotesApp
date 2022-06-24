@@ -354,15 +354,7 @@ class AddPage extends StatelessWidget {
 
 ```dart
 onPressed: () {
-    Provider.of<TodoProvider>(context).addTodo(title: todoController.text);
-},
-```
-
-30. Don't forget to set `listen` to `false` since we are not rebuilding this widget.
-
-```dart
-onPressed: () {
-    Provider.of<TodoProvider>(context, listen: false).addTodo(title: todoController.text);
+    context.read<TodoProvider>().addTodo(title: todoController.text)
 },
 ```
 
@@ -370,7 +362,7 @@ onPressed: () {
 
 ```dart
 onPressed: () {
-    Provider.of<TodoProvider>(context, listen: false).addTodo(title: todoController.text);
+    context.read<TodoProvider>().addTodo(title: todoController.text)
     GoRouter.of(context).pop();
 },
 ```
